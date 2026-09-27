@@ -1,0 +1,275 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    padding-bottom: 50px;
+
+    background-color: #ffe4ec;
+    color: #333333;
+    font-family: Georgia;
+}
+
+.home-page h1 {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 35px;
+    color: #d00000;
+}
+
+h2 {
+    color: #ff3333;
+}
+
+h3 {
+    color: #ff8a8a
+}
+
+div {
+    width: 50%;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+nav a {
+    background-color: #ff8a8a;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.home-page {
+    background: linear-gradient(to bottom, #ffb8c9, #ffd1dc);
+}
+
+.facts-page {
+    background: linear-gradient(to bottom, #ffd1dc, #e9c34a);
+}
+
+.facts-page h1 {
+    color: #b0184c;
+}
+
+.facts-page p {
+    color: #e85d8a;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.facts-page button {
+    background-color: #e85d4a;
+    color: white;
+    font-family: Georgia;
+    border: none;
+    border-radius: 8px;
+    font-size: 22px;
+}
+
+.facts-page #fact {
+    margin-top: 30px;
+    color: #d9362e;
+}
+
+.facts-page img {
+    width: 200px;
+}
+
+.useless-page {
+    background: linear-gradient(to bottom, #f6dc70, #ee8a32)
+}
+
+.useless-page h1 {
+    font-family: Georgia;
+    color: #ff4f70;
+}
+
+.useless-page p {
+    font-family: Georgia;
+    font-size: 25px;
+    color: #ff7f50;
+    margin-top: 30px;
+}
+
+.door {
+    width: 180px;
+    height: 300px;
+    background-color: #ff7f6e;
+    border: 8px solid #d00000;
+    margin-top: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.doorknob {
+    width: 20px;
+    height: 20px;
+    background-color: #fff0c2;
+    border: 2px solid #c98a45;
+    border-radius: 50%;
+
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.door.open {
+    transform: perspective(500px) rotateY(-80deg);
+}
+
+#door-message {
+    font-family: Georgia;
+    font-size: 25px;
+    margin-top: 40px;
+    color: #d9362e;
+}
+
+.decision-page {
+    background: linear-gradient(to bottom, #f6a04d, #f05a5a);
+}
+
+.decision-page h1 {
+    font-family: Georgia;
+    color: #d60000;
+}
+
+.decision-page h2 {
+    font-family: Georgia;
+    color: #ff3b1f;
+}
+
+.decision-page p {
+    font-family: Georgia;
+    color: #ffd23f;
+    font-size: 20px;
+}
+
+.potato-button img {
+    width: min(250px, 70vw);
+}
+
+.potato-button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.decision-page input {
+    font-family: Georgia;
+    padding: 10px;
+    border: 2px solid #e85d4a;
+    border-radius: 8px;
+    width: min(400px, 90vw);
+    background-color: #fff0c7;
+}
+
+
+/* Mobile devices */
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+        padding-top: 140px;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    nav {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    div {
+        width: 100%;
+    }
+
+    .home-page h1 {
+        width: 100%;
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .facts-page h1,
+    .useless-page h1,
+    .decision-page h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .facts-page p,
+    .useless-page p,
+    .decision-page p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .facts-page img {
+        width: min(200px, 70vw);
+        height: auto;
+    }
+
+    .facts-page button {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+
+    .decision-page input {
+        width: 90vw;
+        max-width: 400px;
+        box-sizing: border-box;
+    }
+
+    .potato-button img {
+        width: min(250px, 70vw);
+        height: auto;
+    }
+
+    .door {
+        width: min(180px, 50vw);
+        height: min(300px, 70vw);
+    }
+
+    #door-message,
+    #fact,
+    #potato-answer {
+        width: 90%;
+        font-size: 20px;
+        text-align: center;
+    }
+}

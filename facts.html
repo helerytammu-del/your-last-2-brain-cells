@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>The Pigeon Knows | Your Last 2 Brain Cells</title>
+    </head>
+    <body class="facts-page">
+        <nav>
+            <a href="index.html">The Main Brain</a>
+            <a href="facts.html">The Pigeon Knows</a>
+            <a href="useless.html">Behind This Door</a>
+            <a href="decision.html">Ask The Potato</a>
+        </nav>
+        <img src="pigeon.jpg" alt="A pigeon staring into your soul">
+        <h1>The Pigeon Knows</h1>
+        <p>
+            Feed your last two brain cells some completely unnecessary knowledge.
+        </p>
+        <button class="btn btn-danger" onclick="showFact()">
+            What Does the Pigeon Know?
+        </button>
+        <p id="fact"></p>
+
+        <script>
+            let facts = [
+                "Water is wet.",
+                "Goats have rectangular pupils.",
+                "Scotland's national animal is the unicorn.",
+                "Your left hand and your right hand are on different sides of your body.",
+                "An octopus has blue blood.",
+                "Your brain named itself 'brain' and then made you read this.",
+                "Goats can have accents.",
+                "Some cats are allergic to humans.",
+                "Every 'i' in the word 'Hawaii' has a dot.",
+                "Bananas are botanically berries, but strawberries aren't.",
+            ];
+            function showFact() {
+                let randomIndex = Math.floor(Math.random() * facts.length);
+                document.getElementById("fact").textContent = facts[randomIndex];
+            }
+        </script>
+    </body>
+</html>

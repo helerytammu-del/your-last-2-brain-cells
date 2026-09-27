@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Behind This Door | Your Last 2 Brain Cells</title>
+    </head>
+    <body class="useless-page">
+        <nav>
+            <a href="index.html">The Main Brain</a>
+            <a href="facts.html">The Pigeon Knows</a>
+            <a href="useless.html">Behind This Door</a>
+            <a href="decision.html">Ask The Potato</a>
+        </nav>
+        <h1>Behind This Door</h1>
+        <p>There is absolutely no reason to open this door</p>
+        <div class="door" onclick="openDoor()">
+            <div class="doorknob"></div>
+        </div>
+        <p id="door-message"></p>
+
+        <script>
+            let messages = [
+                "Congratulations. You opened a door. There was nothing behind it.",
+                "Wow. A door. Revolutionary.",
+                "You opened it. Are you happy now?",
+                "There is absolutely nothing here.",
+                "You have wasted several seconds of your life.",
+                "Door opened successfully. Purpose: unknown.",
+                "That was probably not worth it.",
+                "You expected treasure, didn't you?",
+                "Please close the door. This is embarrassing."
+            ];
+            function openDoor() {
+                let door = document.querySelector(".door");
+
+                if (door.classList.contains("open")) {
+                    door.classList.remove("open");
+                    document.getElementById("door-message").textContent =
+                        "You closed the door. Probably for the best.";
+                } else {
+                    door.classList.add("open");
+
+                    let randomIndex = Math.floor(Math.random() * messages.length);
+
+                    document.getElementById("door-message").textContent = messages[randomIndex];
+                }
+            }
+        </script>
+    </body>
+</html>

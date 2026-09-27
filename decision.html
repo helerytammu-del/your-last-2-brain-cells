@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Ask The Potato | Your Last 2 Brain Cells</title>
+    </head>
+    <body class="decision-page">
+        <nav>
+            <a href="index.html">The Main Brain</a>
+            <a href="facts.html">The Pigeon Knows</a>
+            <a href="useless.html">Behind This Door</a>
+            <a href="decision.html">Ask The Potato</a>
+        </nav>
+        <h1>Ask The Potato</h1>
+        <h2>You have a problem. The potato has the answer.</h2>
+        <p>(Just yes and no. Maybe also maybe.)</p>
+        <input type="text" id="question" placeholder="What would you like to ask the potato?">
+        <button onclick="askPotato()" class="potato-button" id="potato-button" disabled>
+            <img src="potato.png" alt>
+        </button>
+        <p id="potato-answer"></p>
+
+        <script>
+            function askPotato() {
+                let answer = [
+                    "Yes.",
+                    "No.",
+                    "Absolutely not.",
+                    "The potato says yes.",
+                    "Ask again later.",
+                    "I have no idea.",
+                    "Probably.",
+                    "This seems like a you problem.",
+                    "Maybe. Maybe not. Who knows?",
+                    "The potato refuses to answer.",
+                    "The potato has left the chat.",
+                    "The vibes say yes.",
+                    "The vibes say absolutely not.",
+                    "Why are you asking a potato?"
+                ];
+                let randomIndex = Math.floor(Math.random() * answer.length);
+                document.getElementById("potato-answer").textContent = answer[randomIndex];
+            }
+            let question = document.getElementById("question");
+            let potatoButton = document.getElementById("potato-button");
+            question.addEventListener("input", function() {
+                if (question.value.trim() !== "") {
+                    potatoButton.disabled = false;
+                } else {
+                    potatoButton.disabled = true;
+                }
+            });
+        </script>
+    </body>
+</html>
